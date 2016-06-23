@@ -108,7 +108,7 @@ public class CAplication {
         operacionesFile.CrearArchivo(ArchivoSalida2);
         operacionesFile.CrearArchivo(ArchivoSalida3);
         
-
+        int numMos = 13;
 
         
         
@@ -134,7 +134,7 @@ public class CAplication {
              }
 
              
-             if (i == (130*k + m)){
+             if (i == (numMos*k + m)){
                  
                  i = i + 3;
                  m = m + 3;
@@ -152,16 +152,27 @@ public class CAplication {
         }
         
         k = 0;
-        for (l=0;l<=(130*130-1); l=l+5){
+        for (l=0;l<=(numMos*numMos-1); l=l+5){
             
-            for(j=5; j>=1; j--){
+            if(l == ((numMos*numMos)- (numMos % 5) - 1)){
+                for(j=(numMos % 5); j>=1; j--) {
+                arreglo2[k]=arreglo1[(l + j)-1];
+                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
+                k++;
+                    
+                } 
+            } else {
                 
+                for(j=5; j>=1; j--){
                 arreglo2[k]=arreglo1[(l + j)-1];
                 operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
                 operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
                 k++;
                 
             }
+            
+
              
     }
         
@@ -214,6 +225,8 @@ public class CAplication {
         
     }
     
+    
+}
     
 }
 //http://stackoverflow.com/questions/4674850/converting-a-sentence-string-to-a-string-array-of-words-in-java
