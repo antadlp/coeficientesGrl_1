@@ -43,16 +43,17 @@ public class CAplication {
         //PruebaInputs.CrearlosDeCodigo("PruebaExt.vmd", "/planb/carpeta1/", 200, 400);
         //archivo.CrearCodigoDe(archivoAcopiar, archivocreado, 4);
         
-        String archivoGaussian = "g09.log";
+        String archivoGaussian = "g092.log";
         int i, j, k, l, m, n;
         int numLineaMolOr;
         int renglonesTotales;
         String Linea01MolOr;
         String[] words;
+        int numMos = 13;
 //        float[] arreglo1 = new float[130*130];
-        String[] arreglo1 = new String[130*130];
-        String[] arreglo2 = new String[130*130];
-        String[] arreglo3 = new String[130*130];
+        String[] arreglo1 = new String[numMos*numMos];
+        String[] arreglo2 = new String[numMos*numMos];
+        String[] arreglo3 = new String[numMos*numMos];
 
 
         
@@ -69,7 +70,7 @@ public class CAplication {
         CopiarArchivo operacionesFile02 = new CopiarArchivo();
         
         
-        renglonesTotales = operacionesFile.countLines("g09.log");
+        renglonesTotales = operacionesFile.countLines(archivoGaussian);
         
         
         
@@ -108,7 +109,6 @@ public class CAplication {
         operacionesFile.CrearArchivo(ArchivoSalida2);
         operacionesFile.CrearArchivo(ArchivoSalida3);
         
-        int numMos = 130;
 
         
         
