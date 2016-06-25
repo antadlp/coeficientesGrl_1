@@ -120,10 +120,10 @@ public class CAplication {
             Linea01MolOr = operacionesFile02.CopiarLineaIndicada(archivoGaussian, numLineaMolOr + (4 - 1) + i);
             words = Linea01MolOr.split("\\s+");
             palabras = words.length;
-    //        System.out.println("verWords " + words[5] + "XX" +i);
             
-            if(((numMos % 5)!= 0)^(i == ((numMos*numMos)- (numMos % 5) - 1))){
-                for(j = (palabras - 1); j >= (((palabras - 1) - (5 - (numMos % 5))) + 1); j--){
+            System.out.println("=====================>" + l);
+            if(((numMos % 5)!= 0)&&(l >= ((numMos*numMos)- 13*(numMos % 5) - 1))){
+                for(j = (palabras - 1); j >=((palabras - 1) - ((numMos % 5)) + 1); j--){
                     arreglo1[l] = words[j];
                     operacionesFile.EscribeDeNuevo(ArchivoSalida, arreglo1[l]);
                     operacionesFile.EscribeDeNuevo(ArchivoSalida, "\n");
@@ -151,11 +151,13 @@ public class CAplication {
             }//for check
         }//for check
         
+        System.out.println("\n\n");
+        System.out.println("salio bien");
 
         
         k = 0;
         for (l=0;l<=(numMos*numMos-1); l=l+5){
-            if(((numMos % 5)!= 0)^(k == ((numMos*numMos)- (numMos % 5) - 1))){
+            if(((numMos % 5)!= 0)&&(k == ((numMos*numMos)- (numMos % 5) - 1))){
                 for(j=((int) (numMos % 5)); j>=1; j--){
                     arreglo2[k]=arreglo1[(l + j)-1];
                     operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
@@ -178,7 +180,7 @@ public class CAplication {
         l=0;
         for(i=0; i<=(numMos*5-5); i+=5){
             for(j=0;j<=(((int) Math.floor(numMos/5.0))-1);j++){
-                if(((numMos % 5)!= 0)^(l == ((numMos*numMos)- (numMos % 5) - 1))){
+                if(((numMos % 5)!= 0)&&(l == ((numMos*numMos)- (numMos % 5) - 1))){
                     for(k=1;k<=((int) (numMos % 5));k++){
                         System.out.println(i);
                         arreglo3[l]=arreglo2[(j*(130*5))+(i)+k-1];
