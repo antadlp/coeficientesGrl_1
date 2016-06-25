@@ -144,40 +144,30 @@ public class CAplication {
                      l = l + 1;
                 }
                 if (i == (numMos*k + m)){
-
                     i = i + 3;
                     m = m + 3;
                     k++;
-
-                } 
-
-
-
-
-
-
-                }//for check
-                 
-             
+                }
+            }//for check
         }//for check
         
 
         
         k = 0;
         for (l=0;l<=(numMos*numMos-1); l=l+5){
-            if(k == ((numMos*numMos)- (numMos % 5) - 1)){
+            if(((numMos % 5)!= 0)^(k == ((numMos*numMos)- (numMos % 5) - 1))){
                 for(j=((int) (numMos % 5)); j>=1; j--){
-                arreglo2[k]=arreglo1[(l + j)-1];
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
-                k++;
+                    arreglo2[k]=arreglo1[(l + j)-1];
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
+                    k++;
                 } 
             } else {
-                for(j=5; j>=1; j--){
-                arreglo2[k]=arreglo1[(l + j)-1];
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
-                k++;
+                    for(j=5; j>=1; j--){
+                    arreglo2[k]=arreglo1[(l + j)-1];
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
+                    k++;
                 }
             }
         } //for chceck   
@@ -188,15 +178,15 @@ public class CAplication {
         l=0;
         for(i=0; i<=(numMos*5-5); i+=5){
             for(j=0;j<=(((int) Math.floor(numMos/5.0))-1);j++){
-                
-                if(l == ((int) ((numMos*numMos)- (numMos % 5) - 1))){
-                    System.out.println(i);
-                    arreglo3[l]=arreglo2[(j*(130*5))+(i)+k-1];
-                    operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
-                    operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
-                    l++;
-                }else {
-                
+                if(((numMos % 5)!= 0)^(l == ((numMos*numMos)- (numMos % 5) - 1))){
+                    for(k=1;k<=((int) (numMos % 5));k++){
+                        System.out.println(i);
+                        arreglo3[l]=arreglo2[(j*(130*5))+(i)+k-1];
+                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+                        l++;
+                    }
+                }else{
                     for(k=1;k<=5;k++){
                         System.out.println(i);
                         arreglo3[l]=arreglo2[(j*(numMos*5))+(i)+k-1];
@@ -209,9 +199,7 @@ public class CAplication {
             }
         }
         
-        
 
-        
         
         
         
@@ -234,13 +222,13 @@ public class CAplication {
         
         
         System.out.println("\n");
-        System.out.print(arreglo2[(130*130 -1)]);
+        System.out.print(arreglo2[(numMos*numMos -1)]);
                 System.out.println("\n");
-        System.out.print(arreglo2[(130*130 -2)]);
+        System.out.print(arreglo2[(numMos*numMos -2)]);
                 System.out.println("\n");
-        System.out.print(arreglo2[(130*130 -3)]);
+        System.out.print(arreglo2[(numMos*numMos -3)]);
                 System.out.println("\n");
-        System.out.print(arreglo2[(130*130 -4)]);
+        System.out.print(arreglo2[(numMos*numMos -4)]);
                     
         
     }
