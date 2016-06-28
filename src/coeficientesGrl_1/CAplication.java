@@ -138,82 +138,100 @@ public class CAplication {
             }//for check
         }//for check
 
-        System.out.println("\n\n");
-        System.out.println("salio bien");
-
-        System.out.println("\n");
-
         k = 0;
-        m = 1;
-        n = 0;
-        for (l = 0; k <= (numMos * numMos - 1); l = l + 5) {
-            System.out.println("=====================>" + k);
-            if (((numMos % 5) != 0) && (k >= ((numMos * numMos) - 13 * (numMos % 5) - 1))) {
-                for (j = ((int) (numMos % 5)); j >= 1; j--) {
-                    //System.out.println("ver condicional k " + ((numMos * numMos) - 13 * (numMos % 5)));
-                    if (k >= ((numMos * numMos) - 13 * (numMos % 5)) && k <= ((numMos * numMos) - 13 * (numMos % 5)) + (numMos % 5) - 1) {
-                        arreglo2[k] = arreglo1[(l + j) - 1];
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
-                        System.out.println(arreglo2[k]);
-                        System.out.println("Entro");
-                        k++;
-                        n= k - (numMos % 5);
-                        m = 0;
-                    } else {
-                        System.out.println("valor de k " + k);
-                        System.out.println("valor de l " + l);
-                        System.out.println("valor de j " + j);
-                        System.out.println("valor de id a2 " + (n+ m*(numMos % 5) + j - 1));
-                        arreglo2[k] = arreglo1[((n + m*(numMos % 5)) + j) - 1];                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
-                        System.out.println(arreglo2[k]);
-                        k++;
-                     }
-                }
-                m++;
-
-            } else {
-                for (j = 5; j >= 1; j--) {
-                    arreglo2[k] = arreglo1[(l + j) - 1];
-                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
-                    System.out.println(arreglo2[k]);
-                    k++;
-                }
+        for (l=0; l<= ((numMos * numMos) - 13 * (numMos % 5) - 1); l+=5){
+            for (j=5; j>=1; j--){
+                arreglo2[k]=arreglo1[(l + j)-1];
+                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
+                System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
+                k++;
             }
-        } //for chceck   
-        System.out.println("\n\n");
-
-        l = 0;
-        for (i = 0; i <= (numMos * 5 - 5); i += 5) {
-        System.out.println("=====================>" + i);
-            for (j = 0; j <= (((int) Math.floor(numMos / 5.0)) - 1); j++) {
-else {
-                    for (k = 1; k <= 5; k++) {
-                        //System.out.println(i);
-                        arreglo3[l] = arreglo2[(j * (numMos * 5)) + (i) + k - 1];
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
-                        System.out.println(arreglo3[l]);
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
-                        l++;
-                    }
-                }
-
+        }
+        for (l = k; l <= (numMos * numMos - 1); l+=(numMos % 5)){
+            for (j = (numMos % 5); j>=1; j--) {
+                arreglo2[k]=arreglo1[(l + j)-1];
+                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
+                System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
+                k++;
             }
         }
         
-                        if (((numMos % 5) != 0) && (l >= ((numMos * numMos) - 13 * (numMos % 5) - 1))) {
-                    for (k = 1; k <= ((int) (numMos % 5)); k++) {
-                        //System.out.println(i);
-                        arreglo3[l] = arreglo2[(j * (130 * 5)) + (i) + k - 1];
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
-                        System.out.println(arreglo3[l]);
-
-                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
-                        l++;
-                    }
-                } 
+        
+        
+//
+//        k = 0;
+//        m = 1;
+//        n = 0;
+//        for (l = 0; k <= (numMos * numMos - 1); l = l + 5) {
+//            System.out.println("=====================>" + k);
+//            if (((numMos % 5) != 0) && (k >= ((numMos * numMos) - 13 * (numMos % 5) - 1))) {
+//                for (j = ((int) (numMos % 5)); j >= 1; j--) {
+//                    //System.out.println("ver condicional k " + ((numMos * numMos) - 13 * (numMos % 5)));
+//                    if (k >= ((numMos * numMos) - 13 * (numMos % 5)) && k <= ((numMos * numMos) - 13 * (numMos % 5)) + (numMos % 5) - 1) {
+//                        arreglo2[k] = arreglo1[(l + j) - 1];
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
+//                        System.out.println(arreglo2[k]);
+//                        System.out.println("Entro");
+//                        k++;
+//                        n= k - (numMos % 5);
+//                        m = 0;
+//                    } else {
+//                        System.out.println("valor de k " + k);
+//                        System.out.println("valor de l " + l);
+//                        System.out.println("valor de j " + j);
+//                        System.out.println("valor de id a2 " + (n+ m*(numMos % 5) + j - 1));
+//                        arreglo2[k] = arreglo1[((n + m*(numMos % 5)) + j) - 1];                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
+//                        System.out.println(arreglo2[k]);
+//                        k++;
+//                     }
+//                }
+//                m++;
+//
+//            } else {
+//                for (j = 5; j >= 1; j--) {
+//                    arreglo2[k] = arreglo1[(l + j) - 1];
+//                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+//                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n");
+//                    System.out.println(arreglo2[k]);
+//                    k++;
+//                }
+//            }
+//        } //for chceck   
+//        System.out.println("\n\n");
+//
+//        l = 0;
+//        for (i = 0; i <= (numMos * 5 - 5); i += 5) {
+//        System.out.println("=====================>" + i);
+//            for (j = 0; j <= (((int) Math.floor(numMos / 5.0)) - 1); j++) {
+//else {
+//                    for (k = 1; k <= 5; k++) {
+//                        //System.out.println(i);
+//                        arreglo3[l] = arreglo2[(j * (numMos * 5)) + (i) + k - 1];
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+//                        System.out.println(arreglo3[l]);
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+//                        l++;
+//                    }
+//                }
+//
+//            }
+//        }
+//        
+//                        if (((numMos % 5) != 0) && (l >= ((numMos * numMos) - 13 * (numMos % 5) - 1))) {
+//                    for (k = 1; k <= ((int) (numMos % 5)); k++) {
+//                        //System.out.println(i);
+//                        arreglo3[l] = arreglo2[(j * (130 * 5)) + (i) + k - 1];
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+//                        System.out.println(arreglo3[l]);
+//
+//                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+//                        l++;
+//                    }
+//                } 
 
 //        for (j=1;j<=(130*130-1); j++){
 //            
@@ -230,14 +248,14 @@ else {
 //        arreglo2[130*130-1] = arreglo1[130*130-5];
 //        operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[j-1]);
 //        
-        System.out.println("\n");
-        System.out.print(arreglo2[(numMos * numMos - 1)]);
-        System.out.println("\n");
-        System.out.print(arreglo2[(numMos * numMos - 2)]);
-        System.out.println("\n");
-        System.out.print(arreglo2[(numMos * numMos - 3)]);
-        System.out.println("\n");
-        System.out.print(arreglo2[(numMos * numMos - 4)]);
+//        System.out.println("\n");
+//        System.out.print(arreglo2[(numMos * numMos - 1)]);
+//        System.out.println("\n");
+//        System.out.print(arreglo2[(numMos * numMos - 2)]);
+//        System.out.println("\n");
+//        System.out.print(arreglo2[(numMos * numMos - 3)]);
+//        System.out.println("\n");
+//        System.out.print(arreglo2[(numMos * numMos - 4)]);
 
     }
 
