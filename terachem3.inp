@@ -1,0 +1,14 @@
+ guess /home/rso/coeff/scr/c0
+ charge +0
+ spinmult 1
+ coordinates mol3.xyz
+ units angstrom
+ method   blyp
+ basis 6-31g
+ precision mixed
+ convthre 3.0e-5
+ maxit 1000
+ run gradient
+ gpus 1
+ end
+
