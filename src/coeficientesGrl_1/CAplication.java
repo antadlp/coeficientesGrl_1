@@ -172,21 +172,43 @@ public class CAplication {
                 }
             }            
         }
-        
-                l=0;
-        for(i=0; i<=645; i+=5){
-            for(j=0;j<=25;j++){
-                for(k=1;k<=5;k++){
-                    System.out.println(i);
-                    arreglo3[l]=arreglo2[(j*(130*5))+(i)+k-1];
-                    operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
-                    operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
-                    l++;
+        System.out.println("\n\n");
+        l=0;
+        m = 0;
+        for(i=0; i <= (numMos*5- 5); i+=5){
+            for(j=0;j<=(Math.floor(numMos/5));j++){
+                if (j == (Math.floor(numMos/5))){
+                    for(k=1;k<=(numMos % 5);k++){
+                        arreglo3[l]=arreglo2[(j*(numMos*5)- m)+(i)+k-1];
+                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+                        System.out.println(" " + (l + 1) + ": " + arreglo3[l] + " " + j);
+                        l++;   
+                    } 
+                    m = m + (5 - numMos % 5);
+                } else {
+                    for(k=1;k<=5;k++){
+                        arreglo3[l]=arreglo2[(j*(numMos*5))+(i)+k-1];
+                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+                        operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+                        System.out.println(" " + (l + 1) + ": " + arreglo3[l] + " " + j);
+                        l++;
+                    }
                 }
             }
         }
-        
-        
+//        System.out.println("***");
+//        for(i=0; i <= (numMos*5- 5); i+=5){
+//            j = (int) Math.ceil(numMos/5);
+//            for(k=1;k<= (numMos % 5);k++){
+//                arreglo3[l]=arreglo2[(j*(numMos*5))+(i)+k-1];
+//                operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+//                operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+//                System.out.println(" " + (l + 1) + ": " + arreglo3[l] + " " + j);
+//                l++;
+//            }
+//        }
+//        
 //
 //        k = 0;
 //        m = 1;
