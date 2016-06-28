@@ -138,26 +138,53 @@ public class CAplication {
             }//for check
         }//for check
 
-        k = 0;
-        for (l=0; l<= ((numMos * numMos) - 13 * (numMos % 5) - 1); l+=5){
-            for (j=5; j>=1; j--){
-                arreglo2[k]=arreglo1[(l + j)-1];
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
-                System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
-                k++;
+        
+        
+        if (numMos % 5 != 0){
+            k = 0;
+            for (l=0; l<= ((numMos * numMos) - 13 * (numMos % 5) - 1); l+=5){
+                for (j=5; j>=1; j--){
+                    arreglo2[k]=arreglo1[(l + j)-1];
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
+                    System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
+                    k++;
+                }
             }
-        }
-        for (l = k; l <= (numMos * numMos - 1); l+=(numMos % 5)){
-            for (j = (numMos % 5); j>=1; j--) {
-                arreglo2[k]=arreglo1[(l + j)-1];
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
-                operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
-                System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
-                k++;
+            for (l = k; l <= (numMos * numMos - 1); l+=(numMos % 5)){
+                for (j = (numMos % 5); j>=1; j--) {
+                    arreglo2[k]=arreglo1[(l + j)-1];
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
+                    System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
+                    k++;
+                }
             }
+        } else {
+            k = 0;
+            for (l=0; l<= ((numMos * numMos) - 1); l+=5){
+                for (j=5; j>=1; j--){
+                    arreglo2[k]=arreglo1[(l + j)-1];
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida2, "\n"); 
+                    System.out.println(" " + (k + 1) + ": " + arreglo2[k] + " " + l);
+                    k++;
+                }
+            }            
         }
         
+                l=0;
+        for(i=0; i<=645; i+=5){
+            for(j=0;j<=25;j++){
+                for(k=1;k<=5;k++){
+                    System.out.println(i);
+                    arreglo3[l]=arreglo2[(j*(130*5))+(i)+k-1];
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida3, arreglo3[l]);
+                    operacionesFile.EscribeDeNuevo(ArchivoSalida3, "\n");
+                    l++;
+                }
+            }
+        }
         
         
 //
