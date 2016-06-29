@@ -41,13 +41,14 @@ public class CAplication {
         //ManejoArchivo.CrearCodigoDe("tresframes.vmd", "CodigoSecuenciaVMD.vmd", 521);
         //PruebaInputs.CrearlosDeCodigo("PruebaExt.vmd", "/planb/carpeta1/", 200, 400);
         //archivo.CrearCodigoDe(archivoAcopiar, archivocreado, 4);
-        String archivoGaussian = "g092.log";
+//aguaSTO3G.log
+        String archivoGaussian = "aguaSTO3G.log";
         int i, j, k, l, m, n;
         int numLineaMolOr;
         int renglonesTotales;
         String Linea01MolOr;
         String[] words;
-        int numMos = 13;
+        int numMos = 7;
 //        float[] arreglo1 = new float[130*130];
         String[] arreglo1 = new String[numMos * numMos];
         String[] arreglo2 = new String[numMos * numMos];
@@ -109,7 +110,7 @@ public class CAplication {
             palabras = words.length;
 
             System.out.println("=====================>" + l);
-            if (((numMos % 5) != 0) && (l >= ((numMos * numMos) - 13 * (numMos % 5) - 1))) {
+            if (((numMos % 5) != 0) && (l >= ((numMos * numMos) - numMos * (numMos % 5) - 1))) {
                 for (j = (palabras - 1); j >= ((palabras - 1) - ((numMos % 5)) + 1); j--) {
                     arreglo1[l] = words[j];
                     operacionesFile.EscribeDeNuevo(ArchivoSalida, arreglo1[l]);
@@ -142,7 +143,7 @@ public class CAplication {
         
         if (numMos % 5 != 0){
             k = 0;
-            for (l=0; l<= ((numMos * numMos) - 13 * (numMos % 5) - 1); l+=5){
+            for (l=0; l<= ((numMos * numMos) - numMos * (numMos % 5) - 1); l+=5){
                 for (j=5; j>=1; j--){
                     arreglo2[k]=arreglo1[(l + j)-1];
                     operacionesFile.EscribeDeNuevo(ArchivoSalida2, arreglo2[k]);
