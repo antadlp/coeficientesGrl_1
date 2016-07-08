@@ -1,5 +1,5 @@
 #include<stdio.h>
-#define SIZE 169
+#define SIZE 49
 
 
 main(){
@@ -20,21 +20,21 @@ main(){
    
   
 
-   fpinC0 = fopen(inputC0,"rb");
-   fread(p, sizeof(double), SIZE, fpinC0);
-   fclose(fpinC0);
-   
-   
-   fpoutC0 = fopen(outputC0,"w");
-   
-   for (i = 0; i <= (SIZE-1); i++) {
-
-      fprintf(fpoutC0, "%e\n", p[i]);
-
-   }
-
-   fclose(fpoutC0);
-
+//   fpinC0 = fopen(inputC0,"rb");
+//   fread(p, sizeof(double), SIZE, fpinC0);
+//   fclose(fpinC0);
+//   
+//   
+//   fpoutC0 = fopen(outputC0,"w");
+//   
+//   for (i = 0; i <= (SIZE-1); i++) {
+//
+//      fprintf(fpoutC0, "%e\n", p[i]);
+//
+//   }
+//
+//   fclose(fpoutC0);
+//
    
    finputC0Data = fopen(inputC0Data,"r");
 
